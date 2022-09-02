@@ -1,20 +1,24 @@
 import m from 'mithril';
 import stream from 'mithril/stream';
+import Message from './Message';
+
+let self;
 
 export default class App {
     constructor () {
-        this.counter = stream(0);
+        const obj = { count: 0 };
+
+        this.counter = obj;
+        this.streamedCounter = stream(obj);
+        self = this;
     }
 
-    oncreate () {
-        setTimeout(() => {
-            this.counter(this.counter() + 1);
-            console.info(this.counter());
-        }, 1000);
+    incrementCounter () {
+        this.counter.count++;
     }
 
     view(vnode) {
-        console.log('App:view', { vnode });
-        return m('h1', `Mithril 1 App: counter ${this.counter()}`);
+        console.log(self, vnode.state, self === vnode.state, this.streamedCounter().count);
+        return m('div', m(Message, { counter: this.counter.count, streamedCounter: this.streamedCounter().count, onIncrement: () => this.incrementCounter() }));
     }
 }
