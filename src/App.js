@@ -15,6 +15,7 @@ export default class App {
 
     incrementCounter () {
         this.counter.count++;
+        console.log(this.counter === this.streamedCounter());
     }
 
     view(vnode) {
