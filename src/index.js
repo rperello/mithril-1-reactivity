@@ -1,4 +1,4 @@
 import m from 'mithril';
-import App from './App';
+import ComponentA from './ComponentA';
 
-m.mount(document.getElementById('app'), App);
+m.mount(document.getElementById('app'), ComponentA);
