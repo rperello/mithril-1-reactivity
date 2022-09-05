@@ -6,7 +6,7 @@ export default class Message {
         console.log('Message2:view', attrs);
         return m('div', [
             m('h1', [
-                `Mithril 1 App 1: counter `,
+                `Mithril 1 App 2: counter `,
                 m('span', attrs.counter),
                 ` streamedCounter `,
                 m('span', attrs.streamedCounter),

@@ -1,8 +1,8 @@
 import m from 'mithril';
 import stream from 'mithril/stream';
-import Message from './Message';
+import Message2 from './Message2';
 
-export default class App {
+export default class App2 {
     constructor () {
         const obj = { count: 0 };
 
@@ -17,6 +17,6 @@ export default class App {
 
     view(vnode) {
         console.log(`${this.constructor.name}:view`);
-        return m('div', m(Message, { counter: this.counter.count, streamedCounter: this.streamedCounter().count, onIncrement: () => this.incrementCounter() }));
+        return m('div', m(Message2, { counter: this.counter.count, streamedCounter: this.streamedCounter().count, onIncrement: () => this.incrementCounter() }));
     }
 }
